@@ -7,8 +7,14 @@
     - increased health from 60 to 100
     - lowered spawnweight from 18 to 15 (spawns a little less)
     - only take effect for new or reset configurations => existing configs would need to be adjusted manually
-- reworked custom item-tags
-
+- update all item/entity tags
+    - add `ancient_helmet` to `minecraft:head_armor`
+    - add all custom food items to the corresponding food tags
+    - add all water animals to `minecraft:aquatic`
+    - definition of temptation/taming items now via item-tags
+        - related config options of the mobs no longer used
+        - this effects: BabyEnderDragon, Crab, Elephant, Flamingo, Giraffe, Koala, Lion, Monkey, Ostrich, Owl, Peacock, Penguin, Raccoon, Shroomie, Snail
+        - now defined via the tag `livingthings:elephant_food`, `livingthings:flamingo_food`,...
 
 ### Version 1.18.2 - 2.1.3
 
