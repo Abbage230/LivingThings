@@ -1,5 +1,6 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -13,6 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
+@AutoService(RegistrationProvider.Factory.class)
 public final class ForgeRegistrationFactory implements RegistrationProvider.Factory {
 
     @Override
