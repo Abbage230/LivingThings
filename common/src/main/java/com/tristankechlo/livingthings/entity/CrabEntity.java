@@ -154,7 +154,7 @@ public class CrabEntity extends Animal implements IMobVariants, NeutralMob, ISca
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return CrabConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.CRAB_FOOD);
     }
 
     @Override
