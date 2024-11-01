@@ -1,7 +1,5 @@
 # Credits
 
-
-
 ## Entity Models
 a list of all entity models used in this mod, that are not made by me
 
@@ -24,8 +22,8 @@ a list of all entity textures used in this mod, that are not made by me
 ## Translations:
 a list of all translations, their translators, and the modversion they are created for
 
-| Language  | up to modversion | Translator                                                 |
-|:---------:|:----------------:|:-----------------------------------------------------------|
-| **en_us** |      2.1.0       | tristankechlo ([Github](https://github.com/tristankechlo)) |
-| **de_de** |      2.1.0       | tristankechlo ([Github](https://github.com/tristankechlo)) |
-| **zh_cn** |      2.1.0       | Rad233 ([Github](https://github.com/Rad233))               |
+| Language  |    last updated    | Translator                                                 |
+|:---------:|:------------------:|:-----------------------------------------------------------|
+| **en_us** |   2.2.0 (always)   | tristankechlo ([GitHub](https://github.com/tristankechlo)) |
+| **de_de** |   2.2.0 (always)   | tristankechlo ([GitHub](https://github.com/tristankechlo)) |
+| **zh_cn** | 2.0.1 (13.08.2023) | Rad586 ([GitHub](https://github.com/Rad586))               |
