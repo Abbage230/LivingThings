@@ -23,6 +23,8 @@ dependencies {
     modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC"
 
     implementation 'org.codehaus.groovy:groovy-json:3.0.16'
+    compileOnly group: 'com.google.auto.service', name: 'auto-service', version: auto_service_version
+    annotationProcessor group: 'com.google.auto.service', name: 'auto-service', version: auto_service_version
 }
 
 loom {

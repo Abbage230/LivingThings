@@ -1,5 +1,6 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.init.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Item;
 
 import java.nio.file.Path;
 
+@AutoService(IPlatformHelper.class)
 public final class FabricPlatformHelper implements IPlatformHelper {
 
     @Override

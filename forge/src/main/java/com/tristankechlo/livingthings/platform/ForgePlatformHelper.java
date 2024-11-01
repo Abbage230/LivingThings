@@ -1,5 +1,6 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.init.ForgeItemGroup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.nio.file.Path;
 
+@AutoService(IPlatformHelper.class)
 public final class ForgePlatformHelper implements IPlatformHelper {
 
     @Override
