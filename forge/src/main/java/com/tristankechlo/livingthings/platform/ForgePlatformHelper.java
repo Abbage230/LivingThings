@@ -1,12 +1,12 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.entity.SeahorseEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
@@ -21,16 +21,12 @@ import net.minecraftforge.fml.loading.FMLPaths;
 import java.nio.file.Path;
 import java.util.function.Supplier;
 
+@AutoService(IPlatformHelper.class)
 public final class ForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public String getPlatformName() {
         return "Forge";
-    }
-
-    @Override
-    public TagKey<Item> getBananaTag() {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fruits/banana"));
     }
 
     @Override
