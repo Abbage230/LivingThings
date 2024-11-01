@@ -5,6 +5,7 @@ import com.tristankechlo.livingthings.entity.ai.BetterMeleeAttackGoal;
 import com.tristankechlo.livingthings.init.ModEntityTypes;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
 import com.tristankechlo.livingthings.util.LexiconEntries;
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -67,7 +68,7 @@ public class MonkeyEntity extends TamableAnimal implements ILexiconEntry {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new BetterMeleeAttackGoal(this, 1, true, MonkeyConfig::canAttack));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.1D, MonkeyConfig.temptationItems(), true));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.1D, Ingredients.MONKEY_FOOD, true));
         this.goalSelector.addGoal(5, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new FollowParentGoal(this, 1.1));
         this.goalSelector.addGoal(7, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
@@ -123,11 +124,7 @@ public class MonkeyEntity extends TamableAnimal implements ILexiconEntry {
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return MonkeyConfig.temptationItems().test(stack) || isBananaItem(stack);
-    }
-
-    public static boolean isBananaItem(ItemStack stack) {
-        return stack.is(LivingThingsTags.BANANAS);
+        return stack.is(LivingThingsTags.MONKEY_FOOD);
     }
 
     @Override
