@@ -62,10 +62,6 @@ public final class CrabConfig extends EntityConfig {
         return INSTANCE.maxSpawnedInChunk.get();
     }
 
-    public static Ingredient temptationItems() {
-        return INSTANCE.temptationItems.get();
-    }
-
     private static List<SpawnData> createDefaultSpawns() {
         return List.of(new SpawnData(60, 5, 8, new ResourceKey[]{Biomes.RIVER, Biomes.BEACH, Biomes.SWAMP, Biomes.MANGROVE_SWAMP}));
     }
