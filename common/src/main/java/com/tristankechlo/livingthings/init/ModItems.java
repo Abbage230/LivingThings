@@ -10,8 +10,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.MobBucketItem;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.material.Fluids;
 
 import java.util.ArrayList;

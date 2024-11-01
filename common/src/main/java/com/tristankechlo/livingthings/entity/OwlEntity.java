@@ -5,6 +5,7 @@ import com.tristankechlo.livingthings.entity.misc.IMobVariants;
 import com.tristankechlo.livingthings.init.ModEntityTypes;
 import com.tristankechlo.livingthings.init.ModSounds;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.util.LexiconEntries;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
 import net.minecraft.core.BlockPos;
@@ -82,7 +83,7 @@ public class OwlEntity extends TamableAnimal implements FlyingAnimal, IMobVarian
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, OwlConfig.temptationItems(), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredients.OWL_FOOD, false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -121,7 +122,8 @@ public class OwlEntity extends TamableAnimal implements FlyingAnimal, IMobVarian
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (!this.isTame() && OwlConfig.tamingItems().test(stack)) {
+        boolean isTamingItem = stack.is(LivingThingsTags.OWL_TAMING_FOOD);
+        if (!this.isTame() && isTamingItem) {
             if (!this.level().isClientSide()) {
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
@@ -135,7 +137,7 @@ public class OwlEntity extends TamableAnimal implements FlyingAnimal, IMobVarian
             }
             return InteractionResult.sidedSuccess(this.level().isClientSide());
 
-        } else if (!this.isFlying() && this.isTame() && this.isOwnedBy(player) && OwlConfig.tamingItems().test(stack)) {
+        } else if (!this.isFlying() && this.isTame() && this.isOwnedBy(player) && isTamingItem) {
 
             this.setOrderedToSit(!this.isOrderedToSit());
             return InteractionResult.sidedSuccess(this.level().isClientSide());
@@ -178,7 +180,7 @@ public class OwlEntity extends TamableAnimal implements FlyingAnimal, IMobVarian
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return OwlConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.OWL_FOOD);
     }
 
     @Override

@@ -170,7 +170,7 @@ public class ElephantEntity extends TamableAnimal implements NeutralMob, HasCust
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return ElephantConfig.get().temptationItems.get().test(stack);
+        return stack.is(LivingThingsTags.ELEPHANT_FOOD);
     }
 
     @Override
@@ -324,7 +324,7 @@ public class ElephantEntity extends TamableAnimal implements NeutralMob, HasCust
     }
 
     public boolean isTamingItem(ItemStack stack) {
-        return ElephantConfig.get().tamingItems.get().test(stack);
+        return stack.is(LivingThingsTags.ELEPHANT_TAMING_FOOD);
     }
 
     public LivingEntity getControllingPassenger() {

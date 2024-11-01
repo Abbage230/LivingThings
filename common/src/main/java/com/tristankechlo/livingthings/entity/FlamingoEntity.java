@@ -3,6 +3,7 @@ package com.tristankechlo.livingthings.entity;
 import com.tristankechlo.livingthings.config.entity.FlamingoConfig;
 import com.tristankechlo.livingthings.init.ModEntityTypes;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.util.LexiconEntries;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
 import net.minecraft.core.BlockPos;
@@ -61,7 +62,7 @@ public class FlamingoEntity extends Animal implements ILexiconEntry {
         this.goalSelector.addGoal(0, new FlamingoEntity.SwimInDeepWaterGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.2D));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.1D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, FlamingoConfig.temptationItems(), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, Ingredients.FLAMINGO_FOOD, false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.2D));
         this.goalSelector.addGoal(5, new FlamingoEntity.LiftLegsGoal(this, 15));
         this.goalSelector.addGoal(5, this.randomWalkingGoal);
@@ -79,7 +80,7 @@ public class FlamingoEntity extends Animal implements ILexiconEntry {
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return FlamingoConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.FLAMINGO_FOOD);
     }
 
     @Override

@@ -108,7 +108,7 @@ public class GiraffeEntity extends Animal implements NeutralMob, IMobVariants, I
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return GiraffeConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.GIRAFFE_FOOD);
     }
 
     @Override

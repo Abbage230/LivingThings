@@ -2,11 +2,8 @@ package com.tristankechlo.livingthings.config.entity;
 
 import com.tristankechlo.livingthings.config.util.EntityConfig;
 import com.tristankechlo.livingthings.config.values.BooleanValue;
-import com.tristankechlo.livingthings.config.values.IngredientValue;
 import com.tristankechlo.livingthings.config.values.NumberValue.DoubleValue;
 import com.tristankechlo.livingthings.config.values.NumberValue.IntegerValue;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 
 public final class BabyEnderDragonConfig extends EntityConfig {
 
@@ -19,11 +16,10 @@ public final class BabyEnderDragonConfig extends EntityConfig {
     public final DoubleValue followRange = new DoubleValue("followRange", 64.0D, 0.0D, 2048.0D); // twice the default FOLLOW_RANGE
     public final BooleanValue canSpawn = new BooleanValue("canSpawn", true);
     public final IntegerValue maxSpawnedInChunk = new IntegerValue("maxSpawnedInChunk", 5, 1, 15);
-    public final IngredientValue temptationItems = new IngredientValue("temptationItems", Items.CHORUS_FRUIT);
 
     private BabyEnderDragonConfig() {
         super("baby_ender_dragon");
-        this.registerConfigValues(canAttack, health, movementSpeed, flyingSpeed, followRange, canSpawn, maxSpawnedInChunk, temptationItems);
+        this.registerConfigValues(canAttack, health, movementSpeed, flyingSpeed, followRange, canSpawn, maxSpawnedInChunk);
     }
 
     public static BabyEnderDragonConfig get() {
@@ -52,10 +48,6 @@ public final class BabyEnderDragonConfig extends EntityConfig {
 
     public static int maxSpawnedInChunk() {
         return INSTANCE.maxSpawnedInChunk.get();
-    }
-
-    public static Ingredient temptationItems() {
-        return INSTANCE.temptationItems.get();
     }
 
     public static double followRange() {
