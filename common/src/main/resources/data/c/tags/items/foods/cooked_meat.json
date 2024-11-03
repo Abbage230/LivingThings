@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "livingthings:cooked_crab",
+        "livingthings:cooked_ostrich",
+        "livingthings:cooked_elephant",
+        "livingthings:cooked_lion",
+        "livingthings:cooked_giraffe"
+    ]
+}
