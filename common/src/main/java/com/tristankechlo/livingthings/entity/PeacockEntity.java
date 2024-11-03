@@ -6,6 +6,7 @@ import com.tristankechlo.livingthings.init.ModEntityTypes;
 import com.tristankechlo.livingthings.init.ModSounds;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
 import com.tristankechlo.livingthings.util.LexiconEntries;
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -54,7 +55,7 @@ public class PeacockEntity extends Animal implements ILexiconEntry {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PeacockPanicGoal(this, 1.25D));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, PeacockConfig.temptationItems(), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, Ingredients.PEACOCK_FOOD, false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(5, new PeacockDestroyCropBlocks(this));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -86,7 +87,7 @@ public class PeacockEntity extends Animal implements ILexiconEntry {
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return PeacockConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.PEACOCK_FOOD);
     }
 
     public static <T extends Animal> boolean checkPeacockSpawnRules(EntityType<T> entityType, ServerLevelAccessor world, MobSpawnType mobSpawnType, BlockPos pos, RandomSource randomSource) {

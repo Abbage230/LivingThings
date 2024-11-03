@@ -1,7 +1,6 @@
 package com.tristankechlo.livingthings.util;
 
 import com.tristankechlo.livingthings.LivingThings;
-import com.tristankechlo.livingthings.platform.IPlatformHelper;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -12,8 +11,27 @@ import net.minecraft.world.level.material.Fluid;
 public final class LivingThingsTags {
 
     public static final TagKey<Block> DROPS_BANANAS = registerBlockTag("drops_bananas");
-    public static final TagKey<Item> BANANAS = IPlatformHelper.INSTANCE.getBananaTag();
 
+    // item tags for entity temptation
+    public static final TagKey<Item> BABY_ENDERDRAGON_FOOD = mobFood("baby_ender_dragon");
+    public static final TagKey<Item> CRAB_FOOD = mobFood("crab");
+    public static final TagKey<Item> ELEPHANT_FOOD = mobFood("elephant");
+    public static final TagKey<Item> ELEPHANT_TAMING_FOOD = mobFood("elephant_taming");
+    public static final TagKey<Item> FLAMINGO_FOOD = mobFood("flamingo");
+    public static final TagKey<Item> GIRAFFE_FOOD = mobFood("giraffe");
+    public static final TagKey<Item> KOALA_FOOD = mobFood("koala");
+    public static final TagKey<Item> LION_FOOD = mobFood("lion");
+    public static final TagKey<Item> MONKEY_FOOD = mobFood("monkey");
+    public static final TagKey<Item> OSTRICH_FOOD = mobFood("ostrich");
+    public static final TagKey<Item> OWL_FOOD = mobFood("owl");
+    public static final TagKey<Item> OWL_TAMING_FOOD = mobFood("owl_taming");
+    public static final TagKey<Item> PEACOCK_FOOD = mobFood("peacock");
+    public static final TagKey<Item> PENGUIN_FOOD = mobFood("penguin");
+    public static final TagKey<Item> RACCOON_FOOD = mobFood("raccoon");
+    public static final TagKey<Item> SHROOMIE_FOOD = mobFood("shroomie");
+    public static final TagKey<Item> SNAIL_FOOD = mobFood("snail");
+
+    // block tags to define where entities can spawn on
     public static final TagKey<Block> CRAB_SPAWNABLE_ON = spawnableOn("crab");
     public static final TagKey<Block> ELEPHANT_SPAWNABLE_ON = spawnableOn("elephant");
     public static final TagKey<Block> FLAMINGO_SPAWNABLE_ON = spawnableOn("flamingo");
@@ -35,6 +53,10 @@ public final class LivingThingsTags {
 
     private static TagKey<Block> spawnableOn(String name) {
         return registerBlockTag(name + "_spawnable_on");
+    }
+
+    private static TagKey<Item> mobFood(String name) {
+        return registerItemTag(name + "_food");
     }
 
     private static TagKey<Block> registerBlockTag(String name) {

@@ -1,5 +1,6 @@
 package com.tristankechlo.livingthings.entity;
 
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.config.GeneralConfig;
 import com.tristankechlo.livingthings.config.entity.BabyEnderDragonConfig;
 import com.tristankechlo.livingthings.entity.ai.CustomSitWhenOrderedToSitGoal;
@@ -68,7 +69,7 @@ public class BabyEnderDragonEntity extends TamableAnimal implements NeutralMob, 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new CustomSitWhenOrderedToSitGoal(this));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, BabyEnderDragonConfig.temptationItems(), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredients.BABY_ENDERDRAGON_FOOD, false));
         this.goalSelector.addGoal(4, new RangedAttackGoal(this, 1.1D, 120, 240, (float) BabyEnderDragonConfig.followRange()));
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.3D, 10.0F, 3.0F, true));
         this.goalSelector.addGoal(8, new WaterAvoidingRandomFlyingGoal(this, 1.2D));
@@ -158,7 +159,7 @@ public class BabyEnderDragonEntity extends TamableAnimal implements NeutralMob, 
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return BabyEnderDragonConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.BABY_ENDERDRAGON_FOOD);
     }
 
     @Override
