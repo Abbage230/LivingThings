@@ -39,7 +39,6 @@ import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.PathType;
-import org.jetbrains.annotations.Nullable;
 
 public class AncientBlazeEntity extends Monster implements PowerableMob, RangedAttackMob, ILexiconEntry {
 

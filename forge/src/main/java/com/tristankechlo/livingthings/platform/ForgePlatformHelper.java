@@ -3,7 +3,6 @@ package com.tristankechlo.livingthings.platform;
 import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.entity.SeahorseEntity;
 import com.tristankechlo.livingthings.init.ModItems;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

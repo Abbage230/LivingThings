@@ -10,7 +10,6 @@ import com.tristankechlo.livingthings.init.ModSounds;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
 import com.tristankechlo.livingthings.util.LexiconEntries;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
-import com.tristankechlo.livingthings.util.MinecraftTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
@@ -168,7 +167,7 @@ public class LionEntity extends Animal implements NeutralMob, IMobVariants, IGen
 
     @Override
     public boolean isFood(ItemStack stack) {
-        boolean isMeat = stack.getItem().isEdible() && (stack.getItem().getFoodProperties().isMeat() || stack.is(MinecraftTags.MEAT));
+        boolean isMeat = stack.has(DataComponents.FOOD) && stack.is(ItemTags.MEAT);
         return stack.is(LivingThingsTags.LION_FOOD) || (LionConfig.allowAllMeatAsFood() && isMeat);
     }
 
