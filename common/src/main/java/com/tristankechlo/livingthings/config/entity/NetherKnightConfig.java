@@ -16,7 +16,7 @@ public final class NetherKnightConfig extends EntityConfig {
     private static final NetherKnightConfig INSTANCE = new NetherKnightConfig();
 
     public final BooleanValue canAttack = new BooleanValue("canAttack", true);
-    public final DoubleValue health = new DoubleValue("health", 100.0D, MIN_HEALTH, MAX_HEALTH);
+    public final DoubleValue health = new DoubleValue("health", 180.0D, MIN_HEALTH, MAX_HEALTH);
     public final DoubleValue movementSpeed = new DoubleValue("movementSpeed", 0.26D, MIN_SPEED, MAX_SPEED);
     public final DoubleValue attackDamage = new DoubleValue("attackDamage", 10.0D, MIN_DAMAGE, MAX_DAMAGE);
     public final DoubleValue weaponDropChance = new DoubleValue("weaponDropChance", 15, 0, 100);
