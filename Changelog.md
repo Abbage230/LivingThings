@@ -4,7 +4,7 @@
 
 - change default values of the NetherKnight
     - lowered `weaponDropChance` from 100% to 15%
-    - increased health from 60 to 100
+    - increased health from 60 (30 hearts) to 180 (90 hearts)
     - lowered spawnweight from 18 to 15 (spawns a little less)
     - only take effect for new or reset configurations => existing configs would need to be adjusted manually
 - update and create item/entity tags
