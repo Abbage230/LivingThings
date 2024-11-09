@@ -1,12 +1,14 @@
 # Changelog
 
-### Version 1.21.1 - 2.1.4
+### Version 1.21.1 - 2.2.0
 
 - change default values of the NetherKnight
     - lowered `weaponDropChance` from 100% to 15%
     - increased health from 60 to 100
     - lowered spawnweight from 18 to 15 (spawns a little less)
     - only take effect for new or reset configurations => existing configs would need to be adjusted manually
+- reworked custom item-tags
+
 
 ### Version 1.21.1 - 2.1.3
 
