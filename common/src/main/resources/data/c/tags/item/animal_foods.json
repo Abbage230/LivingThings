@@ -1,0 +1,20 @@
+{
+    "replace": false,
+    "values": [
+        "livingthings:baby_ender_dragon_food",
+        "livingthings:crab_food",
+        "livingthings:elephant_food",
+        "livingthings:flamingo_food",
+        "livingthings:giraffe_food",
+        "livingthings:koala_food",
+        "livingthings:lion_food",
+        "livingthings:monkey_food",
+        "livingthings:ostrich_food",
+        "livingthings:owl_food",
+        "livingthings:peacock_food",
+        "livingthings:penguin_food",
+        "livingthings:raccoon_food",
+        "livingthings:shroomie_food",
+        "livingthings:snail_food"
+    ]
+}

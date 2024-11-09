@@ -1,0 +1,19 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:apple",
+        "livingthings:banana",
+        {
+            "id": "c:bananas",
+            "required": false
+        },
+        {
+            "id": "c:fruits/banana",
+            "required": false
+        },
+        {
+            "id": "forge:fruits/banana",
+            "required": false
+        }
+    ]
+}
