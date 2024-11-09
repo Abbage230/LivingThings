@@ -14,7 +14,8 @@
     - definition of temptation/taming items now via item-tags
         - related config options of the mobs are no longer used
         - this effects: BabyEnderDragon, Crab, Elephant, Flamingo, Giraffe, Koala, Lion, Monkey, Ostrich, Owl, Peacock, Penguin, Raccoon, Shroomie, Snail
-        - now defined via the tag `livingthings:elephant_food`, `livingthings:flamingo_food`,...
+        - now defined via the tag `livingthings:elephant_food`, `livingthings:flamingo_food`, ...
+- update banana item texture
 
 ### Version 1.19.4 - 2.1.3
 
