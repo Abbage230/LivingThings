@@ -168,7 +168,7 @@ public class LionEntity extends Animal implements NeutralMob, IMobVariants, IGen
     @Override
     public boolean isFood(ItemStack stack) {
         boolean isMeat = stack.has(DataComponents.FOOD) && stack.is(ItemTags.MEAT);
-        return LionConfig.temptationItems().test(stack) || (LionConfig.allowAllMeatAsFood() && isMeat);
+        return stack.is(LivingThingsTags.LION_FOOD) || (LionConfig.allowAllMeatAsFood() && isMeat);
     }
 
     @Override

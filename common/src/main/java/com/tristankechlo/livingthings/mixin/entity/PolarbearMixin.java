@@ -1,7 +1,6 @@
 package com.tristankechlo.livingthings.mixin.entity;
 
 import com.tristankechlo.livingthings.entity.PenguinEntity;
-import com.tristankechlo.livingthings.mixin.entity.MobAccessor;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.PolarBear;
 import org.spongepowered.asm.mixin.Mixin;

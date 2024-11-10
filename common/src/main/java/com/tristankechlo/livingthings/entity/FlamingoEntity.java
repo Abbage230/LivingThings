@@ -3,6 +3,7 @@ package com.tristankechlo.livingthings.entity;
 import com.tristankechlo.livingthings.config.entity.FlamingoConfig;
 import com.tristankechlo.livingthings.init.ModEntityTypes;
 import com.tristankechlo.livingthings.util.ILexiconEntry;
+import com.tristankechlo.livingthings.util.Ingredients;
 import com.tristankechlo.livingthings.util.LexiconEntries;
 import com.tristankechlo.livingthings.util.LivingThingsTags;
 import net.minecraft.core.BlockPos;
@@ -12,7 +13,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -61,7 +65,7 @@ public class FlamingoEntity extends Animal implements ILexiconEntry {
         this.goalSelector.addGoal(0, new FlamingoEntity.SwimInDeepWaterGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.2D));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.1D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, FlamingoConfig.temptationItems(), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, Ingredients.FLAMINGO_FOOD, false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.2D));
         this.goalSelector.addGoal(5, new FlamingoEntity.LiftLegsGoal(this, 15));
         this.goalSelector.addGoal(5, this.randomWalkingGoal);
@@ -79,7 +83,7 @@ public class FlamingoEntity extends Animal implements ILexiconEntry {
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return FlamingoConfig.temptationItems().test(stack);
+        return stack.is(LivingThingsTags.FLAMINGO_FOOD);
     }
 
     @Override

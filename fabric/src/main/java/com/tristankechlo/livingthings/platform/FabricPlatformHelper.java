@@ -29,11 +29,6 @@ public final class FabricPlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public TagKey<Item> getBananaTag() {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "fruits/bananas"));
-    }
-
-    @Override
     public boolean isModLoaded(String modId) {
         return FabricLoader.getInstance().isModLoaded(modId);
     }
