@@ -1,13 +1,12 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.entity.SeahorseEntity;
 import com.tristankechlo.livingthings.init.ModItems;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +22,7 @@ import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import java.nio.file.Path;
 import java.util.function.Supplier;
 
+@AutoService(IPlatformHelper.class)
 public final class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override

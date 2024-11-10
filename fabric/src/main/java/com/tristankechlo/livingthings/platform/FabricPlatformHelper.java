@@ -1,5 +1,6 @@
 package com.tristankechlo.livingthings.platform;
 
+import com.google.auto.service.AutoService;
 import com.tristankechlo.livingthings.entity.SeahorseEntity;
 import com.tristankechlo.livingthings.init.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.material.Fluid;
 import java.nio.file.Path;
 import java.util.function.Supplier;
 
+@AutoService(IPlatformHelper.class)
 public final class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
